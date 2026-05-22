@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Brendel Filipino American Flavors</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 1px solid red;
+}
+
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* cream layer */
+.nav-top {
+  background: #fffbef;
+  text-align: center;
+  padding: 25px 10px;
+}
+
+.brand {
+  color: #800020;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: underline;
+  font-size: 22px;
+}
+
+.tagline {
+  color: #800020;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* red layer */
+.nav-bottom {
+  background: #800020;
+  padding: 10px 20px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* desktop */
+.desktop-nav {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.desktop-nav a {
+  color: #fffbef;
+  text-decoration: none;
+}
+
+/* MOBILE (hidden by default) */
+.mobile-nav {
+  display: none;
+}
+
+.home-icon,
+.menu-icon {
+  color: #fffbef;
+  font-size: 24px;
+  background: none;
+  border: none;
+}
+
+.desktop-nav a,
+.home-icon,
+.menu-icon {
+  color: #fffbef;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.desktop-nav a:hover,
+.home-icon:hover,
+.menu-icon:hover {
+  color: #ffffff;
+  transform: translateY(-1.5px);
+  transition: 0.2s;
+}
+
+
+
+/* HERO SECTION */      
+
+.hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+text-align: center;
+color: #fffbef;
+}
+
+.hero-content h1 {
+font-size: clamp(40px, 6vw, 70px);
+text-decoration: underline;
+margin: 0;
+}
+
+.hero-content p {
+font-size: 18px;
+}
+.cta {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+
+  background: #800020;
+  color: #fffbef;
+
+  border: 2px solid #fffbef;
+  padding: 10px 18px;
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+  
+  
+/* ABOUT US */
+.about {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  text-align: left;
+}
+
+.about-image {
+  flex: 1.2;
+}
+
+  .about-image img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+.about-text {
+  flex: 1; 
+}
+
+.about-text h2 {
+  color: #800020;
+  font-size: 40px;
+  margin-top: 0px;
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.about-text p {
+  line-height: 1.8;
+  color: #333;
+}
+          
+          
+/* MENU */
+.menu {
+  padding: 80px 10%;
+  background: #fffbef;
+  text-align: center;
+}
+
+.menu h2 {
+  color: #800020;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.sets h2 {
+  color: #800020;
+  font-size: 40px;
+  margin: 40px 0 20px;
+}
+.sets h2:first-child {
+  margin-top: 0;
+} 
+
+/* CATEGORY GRID */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.menu-item {
+  background: #3b1f1f;
+  color: #fffbef;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+
+  font-size: 12.5px;
+}
+
+.menu-item:hover {
+  background: #800020;
+  transform: translateY(-3px);
+}
+
+.sets {
+  padding: 40px 10% 80px;
+  background: #fffbef;
+  text-align: center;
+}
+
+.menu,
+.best-sellers,
+.sets {
+  margin: 0;
+}
+
+.menu { padding-bottom: 80px; }
+
+.best-sellers { padding: 80px 10%; }
+
+.sets { padding: 80px 10%; }
+
+/* BEST SELLERS */
+.best-sellers {
+  padding: 80px 10%;
+  background: #fffbef;
+  text-align: center;
+}
+
+.best-sellers h2 {
+  color: #800020;
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.carousel-view {
+  width: 100%;
+  max-width: 760px;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.food-card {
+  flex: 0 0 33.33%;
+  flex-shrink: 0;
+  box-sizing: border-box;
+
+  opacity: 0.45;
+  transform: scale(0.85);
+  transition: 0.3s;
+}
+
+.food-card.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.food-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.food-card p {
+  margin-top: 12px;
+  color: #800020;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.arrow {
+  background: #800020;
+  color: #fffbef;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.dots {
+  margin-top: 30px;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  background: #c8b9b9;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.active-dot {
+  background: #800020;
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: #fffbef;
+  padding: 25px;
+  width: 85%;
+  max-width: 500px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+#modal-body div {
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+
+/* MEDIA QUERY */           
+@media (max-width: 768px) {
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+  }
+  
+    .hero-img {
+    object-position: bottom right;
+  }
+
+ .cta {
+    padding: 6px 12px;
+    font-size: 12px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+            
+a, button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus,
+button:focus {
+  outline: none;
+}    
+     
+     
+.about {
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 20px;
+}
+
+.about-image,
+.about-text {
+  width: 100%;
+}
+  
+  .menu-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+  .sets-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+   .category-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+  
+  .sets {
+    padding: 60px 20px;
+  }
+
+
+ .carousel-view {
+    max-width: 320px;
+  }
+
+  .food-card {
+    flex: 0 0 100%;
+  }
+
+  .food-card img {
+    height: 240px;
+  }
+
+  .arrow {
+    width: 38px;
+    height: 38px;
+    font-size: 20px;
+  }
+  
+  
+  
+  
+}
+        </style>
+    </head>
+    <body>
+        <header class="navbar">
+
+  <!-- TOP LAYER -->
+  <div class="nav-top">
+    <h1 class="brand">BRENDEL</h1>
+    <p class="tagline">Filipino American Flavors</p>
+  </div>
+
+  <!-- BOTTOM LAYER -->
+  <div class="nav-bottom">
+
+    <!-- MOBILE -->
+    <div class="mobile-nav">
+      <a href="#" class="home-icon">⌂</a>
+      <button class="menu-icon">☰</button>
+    </div>
+
+    <!-- DESKTOP -->
+    <nav class="desktop-nav">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Menu</a>
+      <a href="#">Best Seller</a>
+      <a href="#">Reservation</a>
+      <a href="#">Contacts</a>
+      <a href="#">FAQs</a>
+    </nav>
+  </div>
+</header>
+
+
+<!-- HERO SECTION -->
+<section class="hero">
+    
+     <img src="hero.jpg" alt="Hero Image" class="hero-img">
+
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <h1>BRENDEL</h1>
+    <p>Filipino American Flavors</p>
+  </div>
+
+  <button class="cta">Make Reservation</button>
+
+</section>
+        
+<div class="container">  
+<!-- ABOUT US -->        
+<section class="about">
+
+  <div class="about-image">
+    <img src="about.jpg" alt="About Image">
+  </div>
+
+  <div class="about-text">
+    <h2>About Us</h2>
+    <p>
+      BRENDEL combines Filipino and American flavors
+      in a warm modern dining experience.
+    </p>
+  </div>
+
+</section>
+
+
+<!-- MENU -->
+
+<section class="menu">
+
+  <h2>MENU</h2>
+
+  <!-- CATEGORY GRID -->
+  <div class="category-grid">
+
+    <div class="menu-item" onclick="openModal('soups')">Soups</div>
+    <div class="menu-item" onclick="openModal('salads')">Salads</div>
+    <div class="menu-item" onclick="openModal('noodles')">Noodles</div>
+    <div class="menu-item" onclick="openModal('pasta')">Pasta</div>
+
+    <div class="menu-item" onclick="openModal('sides')">Sides</div>
+    <div class="menu-item" onclick="openModal('rice')">Rice</div>
+    <div class="menu-item" onclick="openModal('seafood')">Seafood</div>
+    <div class="menu-item" onclick="openModal('pork')">Pork</div>
+
+    <div class="menu-item" onclick="openModal('chicken')">Chicken</div>
+    <div class="menu-item" onclick="openModal('beef')">Beef</div>
+    <div class="menu-item" onclick="openModal('silog')">Silog</div>
+    <div class="menu-item" onclick="openModal('burgers')">Burgers</div>
+
+    <div class="menu-item" onclick="openModal('pizza')">Pizza</div>
+    <div class="menu-item" onclick="openModal('desserts')">Desserts</div>
+    <div class="menu-item" onclick="openModal('coffee_hot')">Coffee</div>
+    <div class="menu-item" onclick="openModal('soda')">Drinks</div>
+
+  </div>
+
+</section>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">×</span>
+    <h2 id="modal-title"></h2>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<section class="sets">
+
+  <h2>SET MEALS</h2>
+
+  <div class="category-grid">
+
+    <div class="menu-item" onclick="openModal('sets')">Set A</div>
+    <div class="menu-item" onclick="openModal('set_b')">Set B</div>
+    <div class="menu-item" onclick="openModal('set_c')">Set C</div>
+    <div class="menu-item" onclick="openModal('set_d')">Set D</div>
+
+  </div>
+
+  <h2>PARTY PACKAGES</h2>
+
+  <div class="category-grid">
+
+    <div class="menu-item" onclick="openModal('party_a')">Party A</div>
+    <div class="menu-item" onclick="openModal('party_b')">Party B</div>
+    <div class="menu-item" onclick="openModal('party_c')">Party C</div>
+    <div class="menu-item" onclick="openModal('party_d')">Party D</div>
+
+  </div>
+
+</section>
+
+<!-- BEST SELLERS -->
+<section class="best-sellers">
+
+  <h2>BEST SELLERS</h2>
+
+  <div class="carousel">
+
+  <button class="arrow left" onclick="prevSlide()">&#10094;</button>
+
+  <div class="carousel-view">
+    <div class="carousel-track">
+
+      <div class="food-card">
+        <img src="pata.jpg" alt="Crispy Pata">
+        <p>Crispy Pata</p>
+      </div>
+
+      <div class="food-card active">
+        <img src="bulalo.jpg" alt="Beef Bulalo">
+        <p>Beef Bulalo</p>
+      </div>
+
+      <div class="food-card">
+        <img src="ribs.jpg" alt="Baby Back Ribs">
+        <p>Baby Back Ribs</p>
+       </div>
+  </div>
+
+  <button class="arrow right" onclick="nextSlide()">&#10095;</button>
+
+</div>
+</section>
+        
+        </div>
+        
+  <script>
+const menus = {
+  soups: [
+    "Chowder Soup (Good for 2–3 pax) - ₱260",
+    "Creamy Mushroom Soup (Good for 2–3 pax) - ₱240",
+    "Crab and Corn Soup (Good for 2–3 pax) - ₱280"
+  ],
+
+  salads: [
+    "Brendel Salad - ₱280",
+    "Waldorf Salad - ₱270",
+    "Caesar Salad - ₱260",
+    "Greek Salad - ₱260",
+    "Potato Salad - ₱255"
+  ],
+
+  noodles: [
+    "Pancit Guisado (Good for 2–3 pax) - ₱300",
+    "Pancit Canton (Good for 2–3 pax) - ₱300",
+    "Pancit Bihon (Good for 2–3 pax) - ₱320",
+    "Pancit Miki-Bihon (Good for 2–3 pax) - ₱350",
+    "Pancit Lang Lang (Good for 2–3 pax) - ₱370",
+    "Lomi Special (Solo) - ₱160",
+    "Lomi Special (Sharing) - ₱300"
+  ],
+
+  pasta: [
+    "Spanish Sardines Pasta - ₱260",
+    "Creamy Shrimp Pasta - ₱275",
+    "Basil Pesto Pasta - ₱260",
+    "Bolognese Pasta - ₱270",
+    "Chicken Parmigiana Pasta - ₱290",
+    "Basil and Tomato Pasta - ₱260"
+  ],
+
+  sides: [
+    "Chopsuey - ₱280",
+    "Pakbet Con Bagnet - ₱390",
+    "Ampalaya Con Carne - ₱280",
+    "Adobong Kangkong - ₱175",
+    "French Fries - ₱150",
+    "Onion Rings - ₱150",
+    "Potato Wedges - ₱170",
+    "Loaded Nachos - ₱220"
+  ],
+
+  rice: [
+    "Solo Steamed Rice - ₱40",
+    "Family Rice Platter - ₱150",
+    "Solo Garlic Fried Rice - ₱50",
+    "Family Garlic Fried Rice - ₱190",
+    "Half Rice Options Available"
+  ],
+
+  seafood: [
+    "Fish Fillet - ₱260",
+    "Fried Calamares - ₱260",
+    "Garlic Shrimp - ₱380",
+    "Sweet & Sour Fish Fillet - ₱290",
+    "Grilled Tuna Steak - ₱420",
+    "Grilled Bangus - ₱380",
+    "Sinigang na Hipon - ₱370"
+  ],
+
+  pork: [
+    "Crispy Pata - ₱850",
+    "Pork Bagnet - ₱370",
+    "Baby Back Ribs - ₱670",
+    "Bagnet Kare Kare - ₱400",
+    "Pork Sinigang - ₱360",
+    "Pork Barbecue - ₱300"
+  ],
+
+  chicken: [
+    "Fried Chicken - ₱650",
+    "Buffalo Wings - ₱260",
+    "Chicken Tinola - ₱320",
+    "Chicken Caldereta - ₱350"
+  ],
+
+  beef: [
+    "Beef Kare Kare - ₱410",
+    "Beef Caldereta - ₱520",
+    "Beef Bulalo - ₱780",
+    "Beef Salpicao - ₱490"
+  ],
+
+  silog: [
+    "TapSiLog - ₱170",
+    "PorkSiLog - ₱190",
+    "SpamSiLog - ₱160",
+    "BangSiLog - ₱170",
+    "HotSiLog - ₱160"
+  ],
+
+  burgers: [
+    "Cheeseburger - ₱335",
+    "Bacon Cheeseburger - ₱320",
+    "Club Sandwich - ₱260",
+    "Chicken Sandwich - ₱245"
+  ],
+
+  pizza: [
+    "3 Cheese Pizza - ₱405",
+    "Hawaiian Pizza - ₱425",
+    "Meat & Cheese Pizza - ₱430"
+  ],
+
+  desserts: [
+    "Banana Split - ₱250",
+    "Brownie Ala Mode - ₱230",
+    "Turon Ala Mode - ₱190"
+  ],
+
+  coffee_hot: [
+    "Latte - ₱165",
+    "Cappuccino - ₱160",
+    "Americano - ₱70"
+  ],
+
+  coffee_iced: [
+    "Iced Latte - ₱155",
+    "Iced Cappuccino - ₱130",
+    "Iced Americano - ₱70"
+  ],
+
+  smoothies: [
+    "Mango - ₱165",
+    "Watermelon - ₱160",
+    "Pineapple Basil - ₱170"
+  ],
+
+  soda: [
+    "Coke - ₱90",
+    "Sprite - ₱90"
+  ],
+
+  alcohol: [
+    "San Miguel Beer - ₱90",
+    "San Miguel Light - ₱90"
+  ], 
+  
+  sets: [
+  "SET A (Good for 4 pax) - ₱2,000",
+  "Tokwa at Baboy",
+  "Chopsuey",
+  "Beef Bulalo",
+  "Baby Back Ribs",
+  "Rice Platter",
+  "1 Pitcher Iced Tea (Free)"
+],
+
+set_b: [
+  "SET B (Good for 5–6 pax) - ₱3,000",
+  "Caesar Salad",
+  "Crispy Pata",
+  "Bulalo",
+  "Grilled Tuna Steak",
+  "Rice Platter",
+  "1 Pitcher Iced Tea (Free)"
+],
+
+set_c: [
+  "SET C (Good for 8–10 pax) - ₱5,500",
+  "Greek Salad",
+  "Potato Salad",
+  "Family Fried Chicken",
+  "Beef Bulalo",
+  "Crispy Pata",
+  "Rice Platter",
+  "2 Pitchers Iced Tea (Free)"
+],
+
+set_d: [
+  "SET D (Good for 10–12 pax) - ₱6,500",
+  "Tuna Steak Pochero",
+  "Lumpiang Shanghai",
+  "Fried Calamares",
+  "Crispy Pata",
+  "Grilled Tuna Steak",
+  "Beef Bulalo",
+  "Sinigang na Hipon",
+  "Rice Platter (x3)",
+  "2 Pitchers Iced Tea (Free)"
+],
+
+party_a: [
+  "PARTY SET A - ₱425 per head",
+  "Molo Soup",
+  "Potato Salad",
+  "Crispy Fish Fillet",
+  "Baby Back Ribs",
+  "Chopsuey",
+  "Rice",
+  "1 Round Iced Tea",
+  "Dessert: Chocolate Mousse or Mango"
+],
+
+party_b: [
+  "PARTY SET B - ₱475 per head",
+  "Seafood Chowder",
+  "Waldorf Salad",
+  "Lumpiang Shanghai",
+  "Butter Garlic Shrimp",
+  "Crispy Kare Kare",
+  "Filipino Bistek",
+  "Rice",
+  "1 Round Iced Tea",
+  "Dessert: Chocolate Mousse or Mango Tapioca"
+],
+
+party_c: [
+  "PARTY SET C - ₱500 per head",
+  "Seafood Chowder",
+  "Caesar Salad",
+  "Baby Back Ribs",
+  "Fried Chicken",
+  "Chopsuey",
+  "Grilled Tuna",
+  "Rice",
+  "1 Round Iced Tea",
+  "Dessert: Chocolate Mousse or Mango Tapioca"
+],
+
+party_d: [
+  "PARTY SET D - ₱550 per head",
+  "Sinigang na Baboy",
+  "Ensaladang Talong",
+  "Lumpiang Shanghai",
+  "Lechon Kawali",
+  "Pata Kare Kare",
+  "Filipino Bistek",
+  "Rice",
+  "1 Round Iced Tea",
+  "Dessert: Chocolate Mousse or Mango Tapioca",
+  "Inclusions: Sound system, table setup, 4-hour venue use",
+  "Conditions: +10% service charge, min 35 pax, 10% DP required"
+]
+};
+
+let current = 1;
+
+function updateCarousel() {
+  const cards = document.querySelectorAll(".food-card");
+  const dots = document.querySelectorAll(".dot");
+
+  cards.forEach(c => c.classList.remove("active"));
+  dots.forEach(d => d.classList.remove("active-dot"));
+
+  cards[current].classList.add("active");
+  dots[current].classList.add("active-dot");
+}
+
+function nextSlide() {
+  const cards = document.querySelectorAll(".food-card");
+  current = (current + 1) % cards.length;
+  updateCarousel();
+}
+
+function prevSlide() {
+  const cards = document.querySelectorAll(".food-card");
+  current = (current - 1 + cards.length) % cards.length;
+  updateCarousel();
+}
+
+// OPEN MODAL
+function openModal(category) {
+  const modal = document.getElementById("modal");
+  const title = document.getElementById("modal-title");
+  const body = document.getElementById("modal-body");
+
+  modal.style.display = "flex";
+
+  title.innerText = category.toUpperCase();
+
+  const items = menus[category] || ["No items available"];
+
+  body.innerHTML = items
+    .map(item => `<div>${item}</div>`)
+    .join("");
+}
+
+
+// CLOSE MODAL
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
+
+
+// CLICK OUTSIDE MODAL TO CLOSE
+window.addEventListener("click", function (e) {
+  const modal = document.getElementById("modal");
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+});
+
+</script>
+    </body>   
+</html>
