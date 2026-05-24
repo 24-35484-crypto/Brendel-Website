@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Brendel Filipino American Flavors</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px;
+}
+
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* cream layer */
+.nav-top {
+  background: #fffbef;
+  text-align: center;
+  padding: 25px 10px;
+}
+
+.brand {
+  color: #800020;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: underline;
+  font-size: 22px;
+}
+
+.tagline {
+  color: #800020;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* red layer */
+.nav-bottom {
+  background: #800020;
+  padding: 10px 20px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.mobile-nav {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  000;
+}
+
+/* dropdown box */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;  
+  right: 10px;
+  width: 180px;   
+  background: #8b0000;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.mobile-menu.show {
+  display: flex;
+}
+
+/* links */
+.mobile-menu a {
+  color: #f5f5dc;
+  text-decoration: none;
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(245,245,220,0.3);
+}
+
+/* active state */
+.mobile-menu a.active {
+  background: #f5f5dc;
+  color: #8b0000;
+}
+
+section {
+  scroll-behavior: smooth;
+  scroll-margin-top: 20px;
+}
+
+.mobile-menu a:last-child {
+  border-bottom: none;
+}
+
+.menu-icon,
+.home-icon {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+/* desktop */
+.desktop-nav {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.desktop-nav a {
+  color: #fffbef;
+  text-decoration: none;
+}
+
+/* MOBILE (hidden by default) */
+.mobile-nav {
+  display: none;
+}
+
+.home-icon,
+.menu-icon {
+  color: #fffbef;
+  font-size: 24px;
+  background: none;
+  border: none;
+}
+
+.desktop-nav a,
+.home-icon,
+.menu-icon {
+  color: #fffbef;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.desktop-nav a:hover,
+.home-icon:hover,
+.menu-icon:hover {
+  color: #ffffff;
+  transform: translateY(-1.5px);
+  transition: 0.2s;
+}
+
+
+
+/* HERO SECTION */      
+
+.hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+text-align: center;
+color: #fffbef;
+}
+
+.hero-content h1 {
+font-size: clamp(40px, 6vw, 70px);
+text-decoration: underline;
+margin: 0;
+}
+
+.hero-content p {
+font-size: 18px;
+}
+.cta {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+
+  background: #800020;
+  color: #fffbef;
+
+  border: 2px solid #fffbef;
+  padding: 10px 18px;
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+  
+
+.container {
+  font-family: Times New Roman;
+  background: #fffbef;
+}    
+
+.container, .reservation h2 {
+    text-align: center;
+    color: #800020;
+   
+}
+
+.container p {
+    font-size: 12px;
+}    
+  
+/* ABOUT US */
+.about {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  text-align: left;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 50px;
+}
+
+
+.about-image {
+  flex: 1.2;
+}
+
+  .about-image img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+.about-text {
+  flex: 1; 
+  text-align: justify;
+}
+
+
+.about-text p {
+  line-height: 1.8;
+  color: #333;
+}
+          
+
+/* MENU */
+.menu {
+  padding: 80px 10%;
+  background: #fffbef;
+  text-align: center;
+}
+
+.menu h2 {
+  color: #800020;
+  margin-bottom: 20px;
+}
+
+.sets h2 {
+  color: #800020;
+  margin: 40px 0 20px;
+}
+.sets h2:first-child {
+  margin-top: 0;
+} 
+
+/* CATEGORY GRID */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.menu-item {
+  background: #3b1f1f;
+  color: #fffbef;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+
+  font-size: 12px;
+}
+
+
+.menu-item:active {
+  transform: none;
+}
+
+.menu-item:focus {
+  outline: none;
+  transform: none;
+}
+
+.sets {
+  padding: 40px 10% 80px;
+  background: #fffbef;
+  text-align: center;
+}
+
+.menu,
+.best-sellers,
+.sets {
+  margin: 0;
+}
+
+.menu { padding-bottom: 80px; }
+
+.best-sellers { padding: 80px 10%; }
+
+.sets { padding: 80px 10%; }
+
+/* BEST SELLERS */
+
+.best-sellers {
+  padding: 80px 10%;
+  background: #fffbef;
+  text-align: center;
+  overflow: visible;
+}
+
+.best-sellers h2 {
+  margin-bottom: 30px;
+  color: #800020;
+}
+
+@media (min-width: 769px) {
+
+  .carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    overflow: visible;
+    margin-top: 20px;
+  }
+.carousel-viewport {
+  width: 760px;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.food-card {
+  flex: 0 0 33.333%;
+  display: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.food-card img {
+  width: 80%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+
+} 
+
+
+
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: #fffbef;
+  padding: 25px;
+  width: 85%;
+  max-width: 500px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+#modal-body div {
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+/* RESERVATION */
+
+.reservation {
+  padding:80px 8%;
+}
+
+.reservation h3 {
+    font-size: 20px;
+}
+
+.reservation-box{
+  background:#800020;
+  padding:40px;
+  margin: 40px auto 0;
+  margin-top:40px;
+  color:white;
+  max-width:600px;
+  justify-content: center;
+}
+
+.reservation-box h3{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.reservation form{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+.reservation input{
+  padding:12px;
+  border:none;
+}
+
+.reservation form button{
+  padding:10px;
+  background:white;
+  color: #800020;
+  border:none;
+  font-weight:700;
+  margin-top:20px;
+}
+
+/* FAQ */
+
+.faq{
+  padding:80px 8%;
+  color: #800020;
+}
+
+.faq-title{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  margin-bottom:40px;
+  font-size: 30px;
+}
+
+
+.faq-content h4{
+  margin-top:25px;
+  font-size:12px;
+  text-align: justify;
+}
+
+.faq p {
+    margin-top; 20px;
+    color: #53342e;
+    text-align: justify;
+}
+
+/* FOOTER */
+
+footer{
+  background:#800020;
+  color:white;
+  padding:50px 8%;
+}
+
+footer h3{
+  margin-top:30px;
+  margin-bottom:10px;
+}
+
+
+
+/* MEDIA QUERY */           
+@media (max-width: 768px) {
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+  }
+  
+    .hero-img {
+    object-position: bottom right;
+  }
+
+ .cta {
+    padding: 6px 12px;
+    font-size: 12px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+            
+a, button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus,
+button:focus {
+  outline: none;
+}    
+     
+     
+.about {
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: center;
+  gap: 20px;
+}
+
+.about-image,
+.about-text {
+  width: 100%;
+}
+  
+  .menu-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+  .sets-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+   .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+  
+  .sets {
+    padding: 60px 20px;
+  }
+
+
+.carousel {
+  width: 100%;
+}
+
+.carousel-viewport {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;  
+  scroll-snap-type: x mandatory ;
+  
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  transition: none;
+}
+
+.food-card {
+  flex: 0 0 100%;
+  min-width: 100%;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transform: none;
+}
+
+
+.food-card img {
+  width: 80%;
+  max-width: 320px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.carousel button {
+    display: none;
+  }
+
+.arrow {
+  display: none;
+}
+  
+ 
+  h2{
+    text-align: center;
+    font-size: 30px;
+  } 
+  
+  
+}
+
+
+        </style>
+    </head>
+    <body>
+        <header class="navbar">
+
+  <!-- TOP LAYER -->
+  <div class="nav-top">
+    <h1 class="brand">BRENDEL</h1>
+    <p class="tagline">Filipino American Flavors</p>
+  </div>
+
+  <!-- BOTTOM LAYER -->
+  <div class="nav-bottom">
+
+    <!-- MOBILE -->
+    <div class="mobile-nav">
+  <a href="#home" class="home-icon">⌂</a>
+  <button class="menu-icon" onclick="toggleMenu()">☰</button>
+</div>
+
+<nav id="mobileMenu" class="mobile-menu">
+  <a href="#about" onclick="setActive(this); closeMenu()">About Us</a>
+  <a href="#menu" onclick="setActive(this); closeMenu()">Menu</a>
+  <a href="#bestseller" onclick="setActive(this); closeMenu()">Best Sellers</a>
+  <a href="#reservation" onclick="setActive(this); closeMenu()">Reservation</a>
+  <a href="#faqs" onclick="setActive(this); closeMenu()">FAQs</a>
+  <a href="#contacts" onclick="setActive(this); closeMenu()">Contacts</a>
+</nav>
+
+    <!-- DESKTOP -->
+<nav class="desktop-nav">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#menu">Menu</a>
+  <a href="#bestseller">Best Seller</a>
+  <a href="#reservation">Reservation</a>
+  <a href="#faqs">FAQs</a>
+  <a href="#contacts">Contacts</a> 
+</nav>
+  </div>
+</header>
+
+
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+    
+     <img src="hero.jpg" alt="Hero Image" class="hero-img">
+
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <h1>BRENDEL</h1>
+    <p>Filipino American Flavors</p>
+  </div>
+
+  <a class="cta" href="#reservation">Make Reservation</a>
+
+</section>
+        
+ <div class="container"> 
+<!-- ABOUT US -->        
+<section class="about" id="about">
+
+  <div class="about-image">
+    <img src="about.jpg" alt="About Image">
+  </div>
+
+  <div class="about-text">
+    <h2>About Us</h2>
+    <p>
+      Our story began with a passion for blending the comfort of Filipino classics with the innovation of American dining. Each dish is thoughtfully prepared to highlight familiar flavors while introducing exciting twists, creating a dining experience that feels both traditional and modern. Whether you’re joining us for a casual meal, reserving for a special occasion, or ordering takeout, we strive to make every visit memorable.
+    </p>
+  </div>
+
+</section>
+
+
+<!-- MENU -->
+
+<section class="menu" id="menu">
+
+  <h2>MENU</h2>
+
+  <!-- CATEGORY GRID -->
+  <div class="category-grid">
+
+    <div class="menu-item" onclick="openModal('soups')">Soups</div>
+    <div class="menu-item" onclick="openModal('salads')">Salads</div>
+    <div class="menu-item" onclick="openModal('noodles')">Noodles</div>
+    <div class="menu-item" onclick="openModal('pasta')">Pasta</div>
+
+    <div class="menu-item" onclick="openModal('sides')">Sides</div>
+    <div class="menu-item" onclick="openModal('rice')">Rice</div>
+    <div class="menu-item" onclick="openModal('seafood')">Seafood</div>
+    <div class="menu-item" onclick="openModal('pork')">Pork</div>
+
+    <div class="menu-item" onclick="openModal('chicken')">Chicken</div>
+    <div class="menu-item" onclick="openModal('beef')">Beef</div>
+    <div class="menu-item" onclick="openModal('silog')">Silog</div>
+    <div class="menu-item" onclick="openModal('burgers')">Burgers</div>
+
+    <div class="menu-item" onclick="openModal('pizza')">Pizza</div>
+    <div class="menu-item" onclick="openModal('desserts')">Desserts</div>
+    <div class="menu-item" onclick="openModal('coffee_hot')">Coffee</div>
+    <div class="menu-item" onclick="openModal('soda', 'smoothies')">Drinks</div>
+
+  </div>
+
+</section>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">×</span>
+    <h2 id="modal-title"></h2>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<section class="sets">
+
+  <h2>SET MEALS</h2>
+
+  <div class="category-grid">
+
+    <div class="menu-item" onclick="openModal('sets')">Set A</div>
+    <div class="menu-item" onclick="openModal('set_b')">Set B</div>
+    <div class="menu-item" onclick="openModal('set_c')">Set C</div>
+    <div class="menu-item" onclick="openModal('set_d')">Set D</div>
+
+  </div>
+
+  <h2>PARTY PACKAGES</h2>
+
+  <div class="category-grid">
+
+    <div class="menu-item" onclick="openModal('party_a')">Party A</div>
+    <div class="menu-item" onclick="openModal('party_b')">Party B</div>
+    <div class="menu-item" onclick="openModal('party_c')">Party C</div>
+    <div class="menu-item" onclick="openModal('party_d')">Party D</div>
+
+  </div>
+
+</section>
+
+<!-- BEST SELLERS -->
+<section class="best-sellers" id="bestseller">
+
+  <h2>BEST SELLERS</h2>
+
+  <div class="carousel">
+
+    <button onclick="prevSlide()">‹</button>    
+
+    <div class="carousel-viewport">
+
+      <div class="carousel-track">
+         
+
+        <div class="food-card active">
+          <img src="chowder.jpg">
+          <p>Chowder Soup</p>
+        </div>
+
+        <div class="food-card">
+          <img src="bulalo.jpg">
+          <p>Beef Bulalo</p>
+        </div>
+
+        <div class="food-card">
+          <img src="lomi.jpg">
+          <p>Lomi</p>
+        </div>
+
+        <div class="food-card">
+          <img src="bistek.jpg">
+          <p>Filipino Bistek</p>
+        </div>
+
+        <div class="food-card">
+          <img src="kare2.jpg">
+          <p>Kare-Kare</p>
+        </div>
+        
+        <div class="food-card">
+          <img src="kaldereta.jpg">
+          <p>Beef Kaldereta</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <button onclick="nextSlide()">›</button>
+
+  </div>
+
+
+</section>
+
+
+
+
+  <!-- RESERVATION -->
+
+  <section class="reservation" id="reservation" id="reservation">
+
+    
+      <h2>RESERVATION</h2>
+      
+    <div class="reservation-box">
+
+      <h3>BOOK A TABLE WITH US!</h3>
+
+      <form>
+
+        <label>Name:</label>
+        <input type="text">
+
+        <label>Date:</label>
+        <input type="date">
+
+        <label>Time:</label>
+        <input type="time">
+
+        <label>Guests:</label>
+        <input type="number">
+
+        <button type="submit">Reserve Now</button>
+
+      </form>
+
+    </div>
+
+  </section>
+
+  <!-- FAQ -->
+
+  <section class="faq" id="faqs">
+
+    <div class="faq-title">
+      <h2>FAQs</h2>
+      <div class="line"></div>
+    </div>
+
+    <div class="faq-content">
+
+      <h4>What are your opening hours?</h4>
+      <p>We are open on Friday - Sunday from 10am-10pm and Monday -Thursday from 10am-9pm.</p>
+
+      <h4>What payment methods do you accept?</h4>
+      <p>Cash, debit/credit cards, and e-wallets.</p>
+
+      <h4>Do you accept reservations?</h4>
+      <p>Yes, advance booking is recommended.</p>
+
+      <h4>Do you offer takeout or delivery?</h4>
+      <p>Yes, both are available.</p>
+
+    </div>
+
+  </section>
+
+</div> <!-- container div-->
+  <!-- FOOTER -->
+
+  <footer id="contacts">
+
+    <div>
+
+      <h3>VISIT US AT:</h3>
+
+      <p>Templo Avenue, Bagong Pook, Lipa City, Batangas</p>
+
+    </div>
+
+    <div>
+
+      <h3>FOR BOOKINGS & RESERVATION:</h3>
+
+      <p>0960-917-5679</p>
+      <p>0927-964-3131</p>
+
+    </div>
+
+  </footer>
+
+        
+        
+        
+  <script>
+      
+      function toggleMenu() {
+  document.getElementById("mobileMenu").classList.toggle("show");
+}
+
+function closeMenu() {
+  document.getElementById("mobileMenu").classList.remove("show");
+}
+
+function setActive(el) {
+  const links = document.querySelectorAll(".mobile-menu a");
+
+  links.forEach(link => link.classList.remove("active"));
+  el.classList.add("active");
+}
+
+
+
+const menus = {
+  soups: [
+    "Chowder Soup (Good for 2–3 pax) - ₱260",
+    "Creamy Mushroom Soup (Good for 2–3 pax) - ₱240",
+    "Crab and Corn Soup (Good for 2–3 pax) - ₱280"
+  ],
+
+  salads: [
+    "Brendel Salad - ₱280",
+    "Waldorf Salad - ₱270",
+    "Caesar Salad - ₱260",
+    "Greek Salad - ₱260",
+    "Potato Salad - ₱255"
+  ],
+
+  noodles: [
+    "Pancit Guisado (Good for 2–3 pax) - ₱300",
+    "Pancit Canton (Good for 2–3 pax) - ₱300",
+    "Pancit Bihon (Good for 2–3 pax) - ₱320",
+    "Pancit Miki-Bihon (Good for 2–3 pax) - ₱350",
+    "Pancit Lang Lang (Good for 2–3 pax) - ₱370",
+    "Lomi Special (Solo) - ₱160",
+    "Lomi Special (Sharing) - ₱300"
+  ],
+
+  pasta: [
+    "Spanish Sardines Pasta - ₱260",
+    "Creamy Shrimp Pasta - ₱275",
+    "Basil Pesto Pasta - ₱260",
+    "Bolognese Pasta - ₱270",
+    "Chicken Parmigiana Pasta - ₱290",
+    "Basil and Tomato Pasta - ₱260"
+  ],
+
+  sides: [
+    "Chopsuey - ₱280",
+    "Pakbet Con Bagnet - ₱390",
+    "Ampalaya Con Carne - ₱280",
+    "Adobong Kangkong - ₱175",
+    "French Fries - ₱150",
+    "Onion Rings - ₱150",
+    "Potato Wedges - ₱170",
+    "Loaded Nachos - ₱220"
+  ],
+
+  rice: [
+    "Solo Steamed Rice - ₱40",
+    "Family Rice Platter - ₱150",
+    "Solo Garlic Fried Rice - ₱50",
+    "Family Garlic Fried Rice - ₱190",
+    "Half Rice Options Available"
+  ],
+
+  seafood: [
+    "Fish Fillet - ₱260",
+    "Fried Calamares - ₱260",
+    "Garlic Shrimp - ₱380",
+    "Sweet & Sour Fish Fillet - ₱290",
+    "Grilled Tuna Steak - ₱420",
+    "Grilled Bangus - ₱380",
+    "Sinigang na Hipon - ₱370"
+  ],
+
+  pork: [
+    "Crispy Pata - ₱850",
+    "Pork Bagnet - ₱370",
+    "Baby Back Ribs - ₱670",
+    "Bagnet Kare Kare - ₱400",
+    "Pork Sinigang - ₱360",
+    "Pork Barbecue - ₱300"
+  ],
+
+  chicken: [
+    "Fried Chicken - ₱650",
+    "Buffalo Wings - ₱260",
+    "Chicken Tinola - ₱320",
+    "Chicken Caldereta - ₱350"
+  ],
+
+  beef: [
+    "Beef Kare Kare - ₱410",
+    "Beef Caldereta - ₱520",
+    "Beef Bulalo - ₱780",
+    "Beef Salpicao - ₱490"
+  ],
+
+  silog: [
+    "TapSiLog - ₱170",
+    "PorkSiLog - ₱190",
+    "SpamSiLog - ₱160",
+    "BangSiLog - ₱170",
+    "HotSiLog - ₱160"
+  ],
+
+  burgers: [
+    "Cheeseburger - ₱335",
+    "Bacon Cheeseburger - ₱320",
+    "Club Sandwich - ₱260",
+    "Chicken Sandwich - ₱245"
+  ],
+
+  pizza: [
+    "3 Cheese Pizza - ₱405",
+    "Hawaiian Pizza - ₱425",
+    "Meat & Cheese Pizza - ₱430"
+  ],
+
+  desserts: [
+    "Banana Split - ₱250",
+    "Brownie Ala Mode - ₱230",
+    "Turon Ala Mode - ₱190"
+  ],
+
+  coffee_hot: [
+    "Latte - ₱165",
+    "Cappuccino - ₱160",
+    "Americano - ₱70"
+  ],
+
+  soda: [
+    "Coke - ₱90",
+    "Sprite - ₱90"
+  ], 
+  
+  
+  set_a: [
+  "SET A (Good for 4 pax) - ₱2,000",
+  "Tokwa at Baboy",
+  "Chopsuey",
+  "Beef Bulalo",
+  "Baby Back Ribs",
+  "Rice Platter",
+  "1 Pitcher Iced Tea (Free)"
+],
+
+set_b: [
+  "SET B (Good for 5–6 pax) - ₱3,000",
+  "Caesar Salad",
+  "Crispy Pata",
+  "Bulalo",
+  "Grilled Tuna Steak",
+  "Rice Platter",
+  "1 Pitcher Iced Tea (Free)"
+],
+
+set_c: [
+  "SET C (Good for 8–10 pax) - ₱5,500",
+  "Greek Salad",
+  "Potato Salad",
+  "Family Fried Chicken",
+  "Beef Bulalo",
+  "Crispy Pata",
+  "Rice Platter",
+  "2 Pitchers Iced Tea (Free)"
+],
+
+set_d: [
+  "SET D (Good for 10–12 pax) - ₱6,500",
+  "Tuna Steak Pochero",
+  "Lumpiang Shanghai",
+  "Fried Calamares",
+  "Crispy Pata",
+  "Grilled Tuna Steak",
+  "Beef Bulalo",
+  "Sinigang na Hipon",
+  "Rice Platter (x3)",
+  "2 Pitchers Iced Tea (Free)"
+],
+
+party_a: [
+  "PARTY SET A - ₱425 per head",
+  "Molo Soup",
+  "Potato Salad",
+  "Crispy Fish Fillet",
+  "Baby Back Ribs",
+  "Chopsuey",
+  "Rice",
+  "1 Round Iced Tea",
+  "Dessert: Chocolate Mousse or Mango", 
+  "Inclusions: Sound system, table setup, 4-hour venue use",
+  "Conditions: +10% service charge, min 35 pax, 10% DP required"
+],
+
+party_b: [
+  "PARTY SET B - ₱475 per head",
+  "Seafood Chowder",
+  "Waldorf Salad",
+  "Lumpiang Shanghai",
+  "Butter Garlic Shrimp",
+  "Crispy Kare Kare",
+  "Filipino Bistek",
+  "Rice",
+  "1 Round Iced Tea",
+  "Dessert: Chocolate Mousse or Mango Tapioca", 
+   "Dessert: Chocolate Mousse or Mango Tapioca", "Dessert: Chocolate Mousse or Mango Tapioca",
+],
+
+party_c: [
+  "PARTY SET C - ₱500 per head",
+  "Seafood Chowder",
+  "Caesar Salad",
+  "Baby Back Ribs",
+  "Fried Chicken",
+  "Chopsuey",
+  "Grilled Tuna",
+  "Rice",
+  "1 Round Iced Tea",
+  "Dessert: Chocolate Mousse or Mango Tapioca", 
+  "Inclusions: Sound system, table setup, 4-hour venue use",
+  "Conditions: +10% service charge, min 35 pax, 10% DP required"
+],
+
+party_d: [
+  "PARTY SET D - ₱550 per head",
+  "Sinigang na Baboy",
+  "Ensaladang Talong",
+  "Lumpiang Shanghai",
+  "Lechon Kawali",
+  "Pata Kare Kare",
+  "Filipino Bistek",
+  "Rice",
+  "1 Round Iced Tea",
+  "Dessert: Chocolate Mousse or Mango Tapioca",
+  "Inclusions: Sound system, table setup, 4-hour venue use",
+  "Conditions: +10% service charge, min 35 pax, 10% DP required"
+]
+};
+
+let currentPage = 0;
+const track = document.querySelector(".carousel-track");
+
+function updateCarousel() {
+  track.style.transform = `translateX(-${currentPage * 100}%)`;
+}
+
+function nextSlide() {
+  currentPage = 1;
+  updateCarousel();
+}
+
+function prevSlide() {
+  currentPage = 0;
+  updateCarousel();
+}
+
+
+// OPEN MODAL
+function openModal(category) {
+  const modal = document.getElementById("modal");
+  const title = document.getElementById("modal-title");
+  const body = document.getElementById("modal-body");
+
+  modal.style.display = "flex";
+
+  title.innerText = category.toUpperCase();
+
+  const items = menus[category] || ["No items available"];
+
+  body.innerHTML = items
+    .map(item => `<div>${item}</div>`)
+    .join("");
+}
+
+
+// CLOSE MODAL
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
+
+
+
+window.addEventListener("click", function (e) {
+  const modal = document.getElementById("modal");
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+});
+
+</script>
+    </body>   
+</html>
